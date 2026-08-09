@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arabikit"
+version = "0.2.0"
+description = "مكتبة شاملة لمعالجة النصوص العربية: تطبيع، تصحيح العرض (reshaping/bidi)، وتكامل مباشر مع matplotlib للرسوم البيانية."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "اسمك هنا", email = "you@example.com" }
+]
+keywords = ["arabic", "nlp", "text-processing", "matplotlib", "reshaping", "bidi"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Natural Language :: Arabic",
+    "Topic :: Text Processing :: Linguistic",
+]
+# لا اعتماديات إجبارية: normalize_text تعمل بدون أي تثبيت إضافي.
+dependencies = []
+
+[project.optional-dependencies]
+display = ["arabic-reshaper>=3.0.0", "python-bidi>=0.4.2"]
+charts = ["matplotlib>=3.5", "arabic-reshaper>=3.0.0", "python-bidi>=0.4.2"]
+dev = ["pytest>=7.0", "build", "twine"]
+
+[project.scripts]
+arabikit = "arabikit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/arabikit"
+Repository = "https://github.com/yourusername/arabikit"
+Issues = "https://github.com/yourusername/arabikit/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
