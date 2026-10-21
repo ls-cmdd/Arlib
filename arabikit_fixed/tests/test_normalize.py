@@ -11,6 +11,11 @@ def test_remove_tashkeel():
     assert remove_tashkeel("الْعَرَبِيَّة") == "العربية"
 
 
+def test_remove_tashkeel_includes_additional_arabic_marks():
+    marks = "".join(chr(codepoint) for codepoint in range(0x0653, 0x0660))
+    assert remove_tashkeel("ب" + marks + "ت") == "بت"
+
+
 def test_remove_tashkeel_empty_string():
     assert remove_tashkeel("") == ""
 
