@@ -32,9 +32,9 @@ dev = ["pytest>=7.0", "build", "twine"]
 arabikit = "arabikit.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/arabikit"
-Repository = "https://github.com/yourusername/arabikit"
-Issues = "https://github.com/yourusername/arabikit/issues"
+Homepage = "https://github.com/ls-cmdd/Arlib"
+Repository = "https://github.com/ls-cmdd/Arlib"
+Issues = "https://github.com/ls-cmdd/Arlib/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
